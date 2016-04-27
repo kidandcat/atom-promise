@@ -4,13 +4,15 @@
      'body': """var success = null;
               var error = null;
 
-              {code}
+              (success || Function)(params);
 
               return {
                 then: function(cb) {
                   success = cb;
+                  return this;
                 },
                 error: function(cb) {
                   error = cb;
+                  return this;
                 }
               };"""
