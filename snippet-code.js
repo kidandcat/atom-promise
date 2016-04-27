@@ -4,7 +4,7 @@
      'body': """var success = null;
               var error = null;
 
-              (success || Function)(params);
+              (success)?success(params):null;
 
               return {
                 then: function(cb) {
